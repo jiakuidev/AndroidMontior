@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>AndroidMontior</display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StartMontior</servlet-name>
+    <servlet-class>com.nq.montior.servlet.StartMontior</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StopMontior</servlet-name>
+    <servlet-class>com.nq.montior.servlet.StopMontior</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ConfigServlet</servlet-name>
+    <servlet-class>com.nq.montior.servlet.ConfigServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetScreenShot</servlet-name>
+    <servlet-class>com.nq.montior.servlet.GetScreenShot</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDeviceList</servlet-name>
+    <servlet-class>com.nq.montior.servlet.GetDeviceList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SendKeyEvent</servlet-name>
+    <servlet-class>com.nq.montior.servlet.SendKeyEvent</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SendTapEvent</servlet-name>
+    <servlet-class>com.nq.montior.servlet.SendTapEvent</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SendSwipeEvent</servlet-name>
+    <servlet-class>com.nq.montior.servlet.SendSwipeEvent</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ScreenMontior</servlet-name>
+    <servlet-class>com.nq.montior.servlet.ScreenMontior</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>device</servlet-name>
+    <servlet-class>com.nq.montior.servlet.device</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>StartMontior</servlet-name>
+    <url-pattern>/StartMontior</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StopMontior</servlet-name>
+    <url-pattern>/StopMontior</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetScreenShot</servlet-name>
+    <url-pattern>/GetScreenShot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDeviceList</servlet-name>
+    <url-pattern>/GetDeviceList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SendKeyEvent</servlet-name>
+    <url-pattern>/SendKeyEvent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SendTapEvent</servlet-name>
+    <url-pattern>/SendTapEvent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SendSwipeEvent</servlet-name>
+    <url-pattern>/SendSwipeEvent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ScreenMontior</servlet-name>
+    <url-pattern>/ScreenMontior</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>device</servlet-name>
+    <url-pattern>/device</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

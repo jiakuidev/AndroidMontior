@@ -1,0 +1,57 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="./js/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setInterval(getScreenShot, 1000);
+	});
+
+	function getScreenShot() {
+		$.getJSON("./GetScreenShot", "null", function(data) {
+			for (var i = 0; i < data.length; i++) {
+				/*$("#devices").append("<img src='"+convertURL('http://localhost:8080/AndroidMontior/4df1c0803b2d6f4d.png')+"' width='240' height='360' />");
+				$("#devices").fadeIn("slow");*/
+
+				$("#image" + (i + 1)).attr("src",
+						convertURL("./" + data[i].serialNumber + ".jpg"));
+				$("#image" + (i + 1)).attr("style", "");
+
+			}
+		});
+	}
+
+	/**
+	 *给url加上时间戳
+	 */
+	function convertURL(url) {
+		var timestamp = (new Date()).valueOf();
+		if (url.indexOf("?") >= 0) {
+			url = url + "&t=" + timestamp;
+		} else {
+			url = url + "?t=" + timestamp;
+		}
+		return url;
+	}
+</script>
+
+</head>
+<body>
+	<div id="devices">
+		<img id="image1" src="" width='240' height='360' style="display:none;" />
+		<img id="image2" src="" width='240' height='360' style="display:none;" />
+		<img id="image3" src="" width='240' height='360' style="display:none;" />
+		<img id="image4" src="" width='240' height='360' style="display:none;" />
+		<img id="image5" src="" width='240' height='360' style="display:none;" />
+		<img id="image6" src="" width='240' height='360' style="display:none;" />
+		<img id="image7" src="" width='240' height='360' style="display:none;" />
+		<img id="image8" src="" width='240' height='360' style="display:none;" />
+		<img id="image9" src="" width='240' height='360' style="display:none;" />
+		<img id="image10" src="" width='240' height='360'
+			style="display:none;" />
+	</div>
+</body>
+</html>

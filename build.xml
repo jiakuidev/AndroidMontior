@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="AndroidMontior" basedir="." default="makewar">
+	<property name="classpath_lib" value="WebRoot/WEB-INF/lib" />
+	<property name="sources" value="${basedir}/src" />
+
+	<path id="classpath">
+		<!--添加lib 中的jar 包到软件中 -->
+		<fileset dir="${classpath_lib}">
+			<include name="*.jar" />
+		</fileset>
+
+	</path>
+
+	<property name="debuglevel" value="source,lines,vars" />
+
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+
+	<target name="init">
+		<property name="build" value="build/webapp">
+		</property>
+		<property name="src" value="src">
+		</property>
+		<mkdir dir="${build}" />
+		<mkdir dir="${build}\WEB-INF" />
+		<mkdir dir="${build}\WEB-INF\classes" />
+		<mkdir dir="${build}\WEB-INF\lib" />
+		<copy todir="${build}">
+			<fileset dir="${basedir}\WebRoot">
+				<include name="WEB-INF/**" />
+				<include name="**" />
+
+			</fileset>
+		</copy>
+	</target>
+	<target name="complie" depends="init">
+		<!--添加源文件内容和编码utf-8 因为默是系统的本地时间 -->
+		<javac srcdir="${src}" destdir="${build}/WEB-INF/classes" encoding="utf-8" classpathref="classpath">
+		</javac>
+
+	</target>
+	<!--生成war 包结构 -->
+	<target name="makewar" depends="complie">
+		<war warfile="build/AndroidMontior.war" webxml="${build}/WEB-INF/web.xml">
+			<!--
+			<lib dir="${build}/WEB-INF/lib/">
+				<include name="*.jar" />
+			</lib>
+			<classes dir="${build}/WEB-INF/classes" />
+			-->
+			<fileset dir="${build}" />
+		</war>
+	</target>
+	
+	<target name="clean" description="Deletes compiled and generated code">
+		<property name="build" value="build">
+		</property>
+		<delete dir="${build}/webapp" />
+		<delete file="${build}/AndroidMontior.war" />
+	</target>
+
+</project>
